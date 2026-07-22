@@ -1,7 +1,6 @@
 import HeroSection from './components/HeroSection'
 import MarqueeSection from './components/MarqueeSection'
 import AboutSection from './components/AboutSection'
-import SkillsSection from './components/SkillsSection'
 import TechStackSection from './components/TechStackSection'
 import ServicesSection from './components/ServicesSection'
 import ProjectsSection from './components/ProjectsSection'
@@ -15,7 +14,6 @@ function App() {
       <HeroSection />
       <MarqueeSection />
       <AboutSection />
-      <SkillsSection />
       <TechStackSection />
       <ServicesSection />
       <ProjectsSection />

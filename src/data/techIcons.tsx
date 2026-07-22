@@ -17,6 +17,9 @@ import {
   TerminalSquare,
   Cpu,
   Zap,
+  Feather,
+  Boxes,
+  Image,
   type LucideIcon,
 } from 'lucide-react'
 
@@ -46,4 +49,8 @@ export const TECH_ICONS: Record<string, TechMeta> = {
   Vercel: { icon: Zap, color: '#EDEDED' },
   'Google Maps': { icon: Webhook, color: '#4285F4' },
   Tailwind: { icon: Wind, color: '#38BDF8' },
+  Gin: { icon: Feather, color: '#00ADD8' },
+  GORM: { icon: Boxes, color: '#7C3AED' },
+  MySQL: { icon: Database, color: '#00758F' },
+  Photoshop: { icon: Image, color: '#31A8FF' },
 }
