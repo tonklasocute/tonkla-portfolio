@@ -1,25 +1,28 @@
 import FadeIn from './FadeIn'
 import AnimatedText from './AnimatedText'
 import ContactButton from './ContactButton'
+import TechBadge from './TechBadge'
 
-const ABOUT_TEXT =
-  "With more than five years of experience in design, i focus on branding, web design, and user experience, i truly enjoy working with businesses that aim to stand out and present their best image. Let's build something incredible together!"
+const ABOUT_PARAGRAPHS = [
+  'I enjoy transforming ideas into polished digital products that combine thoughtful design with scalable engineering.',
+  'From backend architecture to modern frontend development, I focus on creating products that are fast, intuitive, and memorable.',
+  'Every project is an opportunity to learn, improve, and build something meaningful.',
+]
 
 export default function AboutSection() {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center px-5 sm:px-8 md:px-10 py-20">
+    <section
+      id="about"
+      className="relative min-h-screen flex flex-col items-center justify-center px-5 sm:px-8 md:px-10 py-20"
+    >
       <FadeIn
         delay={0.1}
         x={-80}
         y={0}
         duration={0.9}
-        className="absolute top-[4%] left-[1%] sm:left-[2%] md:left-[4%] w-[120px] sm:w-[160px] md:w-[210px]"
+        className="absolute top-[4%] left-[1%] sm:left-[2%] md:left-[4%]"
       >
-        <img
-          src="https://shrug-person-78902957.figma.site/_components/v2/ebb2b8f25d8e24d5f0a5ca8af4c950de81aa2fd7/moon_icon.11395d36.png"
-          alt=""
-          className="w-full"
-        />
+        <TechBadge name="Go" size="lg" />
       </FadeIn>
 
       <FadeIn
@@ -27,13 +30,9 @@ export default function AboutSection() {
         x={-80}
         y={0}
         duration={0.9}
-        className="absolute bottom-[8%] left-[3%] sm:left-[6%] md:left-[10%] w-[100px] sm:w-[140px] md:w-[180px]"
+        className="absolute bottom-[8%] left-[3%] sm:left-[6%] md:left-[10%]"
       >
-        <img
-          src="https://shrug-person-78902957.figma.site/_components/v2/ebb2b8f25d8e24d5f0a5ca8af4c950de81aa2fd7/p59_1.4659672e.png"
-          alt=""
-          className="w-full"
-        />
+        <TechBadge name="Docker" size="md" />
       </FadeIn>
 
       <FadeIn
@@ -41,13 +40,9 @@ export default function AboutSection() {
         x={80}
         y={0}
         duration={0.9}
-        className="absolute top-[4%] right-[1%] sm:right-[2%] md:right-[4%] w-[120px] sm:w-[160px] md:w-[210px]"
+        className="absolute top-[4%] right-[1%] sm:right-[2%] md:right-[4%]"
       >
-        <img
-          src="https://shrug-person-78902957.figma.site/_components/v2/ebb2b8f25d8e24d5f0a5ca8af4c950de81aa2fd7/lego_icon-1.703bb594.png"
-          alt=""
-          className="w-full"
-        />
+        <TechBadge name="React" size="lg" />
       </FadeIn>
 
       <FadeIn
@@ -55,13 +50,9 @@ export default function AboutSection() {
         x={80}
         y={0}
         duration={0.9}
-        className="absolute bottom-[8%] right-[3%] sm:right-[6%] md:right-[10%] w-[130px] sm:w-[170px] md:w-[220px]"
+        className="absolute bottom-[8%] right-[3%] sm:right-[6%] md:right-[10%]"
       >
-        <img
-          src="https://shrug-person-78902957.figma.site/_components/v2/ebb2b8f25d8e24d5f0a5ca8af4c950de81aa2fd7/Group_134-1.2e04f3ce.png"
-          alt=""
-          className="w-full"
-        />
+        <TechBadge name="TypeScript" size="md" />
       </FadeIn>
 
       <div className="flex flex-col items-center gap-10 sm:gap-14 md:gap-16">
@@ -75,11 +66,16 @@ export default function AboutSection() {
         </FadeIn>
 
         <div className="flex flex-col items-center gap-16 sm:gap-20 md:gap-24">
-          <AnimatedText
-            text={ABOUT_TEXT}
-            className="text-[#D7E2EA] font-medium text-center leading-relaxed max-w-[560px]"
-            style={{ fontSize: 'clamp(1rem, 2vw, 1.35rem)' }}
-          />
+          <div className="flex flex-col gap-4 sm:gap-5">
+            {ABOUT_PARAGRAPHS.map((text) => (
+              <AnimatedText
+                key={text}
+                text={text}
+                className="text-[#D7E2EA] font-medium text-center leading-relaxed max-w-[560px]"
+                style={{ fontSize: 'clamp(1rem, 2vw, 1.35rem)' }}
+              />
+            ))}
+          </div>
 
           <ContactButton />
         </div>

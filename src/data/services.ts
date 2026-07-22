@@ -1,32 +1,36 @@
 export const SERVICES = [
   {
     number: '01',
-    name: '3D Modeling',
+    name: 'Frontend Development',
     description:
-      'Creation of detailed objects, characters, or environments tailored to specific client needs, ideal for games, products, and visualizations.',
+      'Building responsive modern interfaces with React, Next.js and TypeScript.',
   },
   {
     number: '02',
-    name: 'Rendering',
+    name: 'Backend Development',
     description:
-      'High-quality, photorealistic renders that showcase designs with custom lighting, textures, and materials to bring concepts to life.',
+      'Developing scalable REST APIs using Go, Gin, GORM, PostgreSQL and MySQL.',
   },
   {
     number: '03',
-    name: 'Motion Design',
+    name: 'System Architecture',
     description:
-      'Dynamic animations and motion graphics that add energy and storytelling to brands, products, and digital experiences.',
+      'Designing maintainable backend systems with clean architecture.',
   },
   {
     number: '04',
-    name: 'Branding',
-    description:
-      "Crafting cohesive visual identities -- from logos to full brand systems -- that communicate a clear and memorable presence.",
+    name: 'UI / UX Design',
+    description: 'Designing intuitive and engaging user experiences.',
   },
   {
     number: '05',
-    name: 'Web Design',
+    name: 'AI Integration',
+    description: 'Integrating AI services into modern web applications.',
+  },
+  {
+    number: '06',
+    name: 'Performance Optimization',
     description:
-      'Designing clean, modern, and conversion-focused websites with attention to layout, typography, and user experience.',
+      'Optimizing rendering, APIs, caching and application performance.',
   },
 ]

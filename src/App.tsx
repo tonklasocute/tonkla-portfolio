@@ -1,17 +1,25 @@
 import HeroSection from './components/HeroSection'
 import MarqueeSection from './components/MarqueeSection'
 import AboutSection from './components/AboutSection'
+import SkillsSection from './components/SkillsSection'
+import TechStackSection from './components/TechStackSection'
 import ServicesSection from './components/ServicesSection'
 import ProjectsSection from './components/ProjectsSection'
+import Footer from './components/Footer'
+import AmbientBackground from './components/AmbientBackground'
 
 function App() {
   return (
-    <main className="bg-[#0C0C0C]" style={{ overflowX: 'clip' }}>
+    <main className="relative bg-[#0C0C0C]" style={{ overflowX: 'clip' }}>
+      <AmbientBackground />
       <HeroSection />
       <MarqueeSection />
       <AboutSection />
+      <SkillsSection />
+      <TechStackSection />
       <ServicesSection />
       <ProjectsSection />
+      <Footer />
     </main>
   )
 }

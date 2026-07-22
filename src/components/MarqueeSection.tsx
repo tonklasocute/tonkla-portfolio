@@ -1,14 +1,54 @@
 import { useEffect, useRef, useState } from 'react'
-import { ROW_1_IMAGES, ROW_2_IMAGES } from '../data/marqueeImages'
+import {
+  ROW_1_PROJECTS,
+  ROW_2_PROJECTS,
+  type MarqueeProject,
+} from '../data/marqueeProjects'
 
-function Tile({ src }: { src: string }) {
+function Tile({ project }: { project: MarqueeProject }) {
   return (
-    <img
-      src={src}
-      alt=""
-      loading="lazy"
-      className="w-[420px] h-[270px] rounded-2xl object-cover flex-shrink-0"
-    />
+    <div
+      className="relative w-[420px] h-[270px] rounded-2xl flex-shrink-0 overflow-hidden border border-white/10"
+      style={{
+        background:
+          'linear-gradient(160deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.015) 100%)',
+      }}
+    >
+      <div
+        className="absolute inset-0 opacity-40"
+        style={{
+          background: `radial-gradient(circle at 20% 15%, ${project.accent}55 0%, transparent 55%)`,
+        }}
+      />
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage:
+            'linear-gradient(rgba(215,226,234,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(215,226,234,0.06) 1px, transparent 1px)',
+          backgroundSize: '24px 24px',
+        }}
+      />
+
+      <div className="relative h-full flex flex-col justify-between p-5">
+        <div className="flex items-center gap-1.5">
+          <span className="w-2 h-2 rounded-full bg-[#FF5F56]" />
+          <span className="w-2 h-2 rounded-full bg-[#FFBD2E]" />
+          <span className="w-2 h-2 rounded-full bg-[#27C93F]" />
+        </div>
+
+        <div className="flex flex-col gap-1.5">
+          <span
+            className="text-[10px] font-mono uppercase tracking-widest"
+            style={{ color: project.accent }}
+          >
+            {project.tag}
+          </span>
+          <span className="text-[#D7E2EA] font-medium text-lg leading-snug">
+            {project.name}
+          </span>
+        </div>
+      </div>
+    </div>
   )
 }
 
@@ -31,8 +71,8 @@ export default function MarqueeSection() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const row1 = [...ROW_1_IMAGES, ...ROW_1_IMAGES, ...ROW_1_IMAGES]
-  const row2 = [...ROW_2_IMAGES, ...ROW_2_IMAGES, ...ROW_2_IMAGES]
+  const row1 = [...ROW_1_PROJECTS, ...ROW_1_PROJECTS, ...ROW_1_PROJECTS]
+  const row2 = [...ROW_2_PROJECTS, ...ROW_2_PROJECTS, ...ROW_2_PROJECTS]
 
   return (
     <section
@@ -47,8 +87,8 @@ export default function MarqueeSection() {
             willChange: 'transform',
           }}
         >
-          {row1.map((src, i) => (
-            <Tile key={`row1-${i}`} src={src} />
+          {row1.map((project, i) => (
+            <Tile key={`row1-${i}`} project={project} />
           ))}
         </div>
         <div
@@ -58,8 +98,8 @@ export default function MarqueeSection() {
             willChange: 'transform',
           }}
         >
-          {row2.map((src, i) => (
-            <Tile key={`row2-${i}`} src={src} />
+          {row2.map((project, i) => (
+            <Tile key={`row2-${i}`} project={project} />
           ))}
         </div>
       </div>

@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import LiveProjectButton from './LiveProjectButton'
+import ProjectVisual from './ProjectVisual'
 import type { PROJECTS } from '../data/projects'
 
 interface ProjectCardProps {
@@ -55,24 +56,30 @@ export default function ProjectCard({
 
         <div className="flex gap-3 mt-4 sm:mt-6 flex-1">
           <div className="w-[40%] flex flex-col gap-3">
-            <img
-              src={project.col1Image1}
-              alt=""
-              className="w-full object-cover rounded-[40px] sm:rounded-[50px] md:rounded-[60px]"
+            <ProjectVisual
+              variant="browser"
+              name={project.name}
+              tech={project.tech}
+              accent={project.accent}
+              className="w-full rounded-[40px] sm:rounded-[50px] md:rounded-[60px]"
               style={{ height: 'clamp(130px, 16vw, 230px)' }}
             />
-            <img
-              src={project.col1Image2}
-              alt=""
-              className="w-full object-cover rounded-[40px] sm:rounded-[50px] md:rounded-[60px]"
+            <ProjectVisual
+              variant="terminal"
+              name={project.name}
+              tech={project.tech}
+              accent={project.accent}
+              className="w-full rounded-[40px] sm:rounded-[50px] md:rounded-[60px]"
               style={{ height: 'clamp(160px, 22vw, 340px)' }}
             />
           </div>
           <div className="w-[60%]">
-            <img
-              src={project.col2Image}
-              alt=""
-              className="w-full h-full object-cover rounded-[40px] sm:rounded-[50px] md:rounded-[60px]"
+            <ProjectVisual
+              variant="editor"
+              name={project.name}
+              tech={project.tech}
+              accent={project.accent}
+              className="w-full h-full rounded-[40px] sm:rounded-[50px] md:rounded-[60px]"
             />
           </div>
         </div>
