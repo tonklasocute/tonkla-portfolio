@@ -6,7 +6,7 @@ const CODE_LINES: { indent: number; content: ReactNode }[] = [
   { indent: 0, content: <><span style={{ color: '#BB4CDB' }}>const</span> <span style={{ color: '#D7E2EA' }}>developer</span> = {'{'}</> },
   { indent: 1, content: <><span style={{ color: '#7DD3FC' }}>name</span>: <span style={{ color: '#A5D6A7' }}>'Tonkla'</span>,</> },
   { indent: 1, content: <><span style={{ color: '#7DD3FC' }}>role</span>: <span style={{ color: '#A5D6A7' }}>'Full Stack Developer'</span>,</> },
-  { indent: 1, content: <><span style={{ color: '#7DD3FC' }}>stack</span>: [<span style={{ color: '#A5D6A7' }}>'Go'</span>, <span style={{ color: '#A5D6A7' }}>'React'</span>, <span style={{ color: '#A5D6A7' }}>'Next.js'</span>],</> },
+  { indent: 1, content: <><span style={{ color: '#7DD3FC' }}>stack</span>: [<span style={{ color: '#A5D6A7' }}>'Go'</span>, <span style={{ color: '#A5D6A7' }}>'Microservices'</span>, <span style={{ color: '#A5D6A7' }}>'React'</span>],</> },
   { indent: 1, content: <><span style={{ color: '#7DD3FC' }}>shipping</span>: <span style={{ color: '#FDBA74' }}>true</span>,</> },
   { indent: 0, content: <>{'}'}</> },
 ]

@@ -5,7 +5,7 @@ export const TECH_CATEGORIES = [
   },
   {
     title: 'Backend',
-    items: ['Go', 'Gin', 'GORM', 'REST API'],
+    items: ['Go', 'Gin', 'GORM', 'Node.js', 'NestJS', 'Microservices', 'REST API'],
   },
   {
     title: 'Database',
@@ -13,7 +13,7 @@ export const TECH_CATEGORIES = [
   },
   {
     title: 'DevOps',
-    items: ['Docker', 'Git', 'GitHub', 'Linux', 'Vercel'],
+    items: ['Docker', 'Git', 'GitHub', 'CI/CD', 'Linux', 'Vercel'],
   },
   {
     title: 'Design',

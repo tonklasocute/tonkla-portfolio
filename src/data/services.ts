@@ -15,7 +15,7 @@ export const SERVICES = [
     number: '03',
     name: 'System Architecture',
     description:
-      'Designing maintainable backend systems with clean architecture.',
+      'Designing maintainable microservices and backend systems with clean architecture.',
   },
   {
     number: '04',

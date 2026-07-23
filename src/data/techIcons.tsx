@@ -20,6 +20,10 @@ import {
   Feather,
   Boxes,
   Image,
+  Hexagon,
+  Shield,
+  Workflow,
+  RefreshCw,
   type LucideIcon,
 } from 'lucide-react'
 
@@ -53,4 +57,8 @@ export const TECH_ICONS: Record<string, TechMeta> = {
   GORM: { icon: Boxes, color: '#7C3AED' },
   MySQL: { icon: Database, color: '#00758F' },
   Photoshop: { icon: Image, color: '#31A8FF' },
+  'Node.js': { icon: Hexagon, color: '#339933' },
+  NestJS: { icon: Shield, color: '#E0234E' },
+  Microservices: { icon: Workflow, color: '#00ADD8' },
+  'CI/CD': { icon: RefreshCw, color: '#22C55E' },
 }

@@ -7,15 +7,15 @@ import ContactButton from './ContactButton'
 import TechBadge from './TechBadge'
 
 const ABOUT_PARAGRAPHS = [
-  "I'm a Full Stack Developer who turns ideas into fast, polished products — end to end, from database schema to pixel-perfect UI.",
-  'I move fluidly between backend architecture and frontend craft, building systems that are reliable underneath and effortless to use on top.',
-  'I care about clean code, thoughtful UX, and shipping things that actually feel good to use.',
+  "I'm a Full Stack Developer with a deep specialization in Go and microservices — I've built backend platforms serving national-scale government sectors, handling tens of thousands of requests a day.",
+  'I move fluidly between backend architecture and frontend craft, pairing PostgreSQL-backed APIs with modern interfaces in React and Next.js.',
+  'I care about clean code, thoughtful UX, and shipping systems that are both reliable and easy to use.',
 ]
 
 const PROFILE_LINES: { indent: number; content: ReactNode }[] = [
   { indent: 0, content: <><span style={{ color: '#BB4CDB' }}>const</span> <span style={{ color: '#D7E2EA' }}>about</span> = {'{'}</> },
   { indent: 1, content: <><span style={{ color: '#7DD3FC' }}>role</span>: <span style={{ color: '#A5D6A7' }}>'Full Stack Developer'</span>,</> },
-  { indent: 1, content: <><span style={{ color: '#7DD3FC' }}>focus</span>: [<span style={{ color: '#A5D6A7' }}>'Go'</span>, <span style={{ color: '#A5D6A7' }}>'React'</span>, <span style={{ color: '#A5D6A7' }}>'Next.js'</span>],</> },
+  { indent: 1, content: <><span style={{ color: '#7DD3FC' }}>focus</span>: [<span style={{ color: '#A5D6A7' }}>'Go'</span>, <span style={{ color: '#A5D6A7' }}>'Microservices'</span>, <span style={{ color: '#A5D6A7' }}>'React'</span>],</> },
   { indent: 1, content: <><span style={{ color: '#7DD3FC' }}>approach</span>: <span style={{ color: '#A5D6A7' }}>'ship fast, polish always'</span>,</> },
   { indent: 1, content: <><span style={{ color: '#7DD3FC' }}>mindset</span>: <span style={{ color: '#A5D6A7' }}>'always learning'</span>,</> },
   { indent: 0, content: <>{'}'}</> },

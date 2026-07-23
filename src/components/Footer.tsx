@@ -1,11 +1,11 @@
-import { Mail, Github, Linkedin } from 'lucide-react'
+import { Mail, Github, Phone } from 'lucide-react'
 import FadeIn from './FadeIn'
 import ContactButton from './ContactButton'
 
 const LINKS = [
-  { label: 'Email', href: 'mailto:hello@tonkla.dev', icon: Mail },
-  { label: 'GitHub', href: 'https://github.com/tonkla', icon: Github },
-  { label: 'LinkedIn', href: 'https://linkedin.com/in/tonkla', icon: Linkedin },
+  { label: 'Email', href: 'mailto:khomkrit.d@outlook.com', icon: Mail },
+  { label: 'GitHub', href: 'https://github.com/tonklasocute', icon: Github },
+  { label: 'Phone', href: 'tel:+66631409356', icon: Phone },
 ]
 
 export default function Footer() {
@@ -35,6 +35,9 @@ export default function Footer() {
           </span>
           <span className="text-[#D7E2EA]/50 font-light uppercase tracking-widest text-xs sm:text-sm">
             Creative Full Stack Developer
+          </span>
+          <span className="text-[#D7E2EA]/30 font-light text-[10px] sm:text-xs mt-1">
+            Khomkrit Daengnuan · Bangkok, Thailand
           </span>
         </div>
       </FadeIn>
