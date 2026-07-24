@@ -5,17 +5,15 @@ export interface MarqueeProject {
 }
 
 export const MARQUEE_PROJECTS: MarqueeProject[] = [
-  { name: 'Restaurant Management System', tag: 'Go · React · PostgreSQL', accent: '#00ADD8' },
-  { name: 'Travel Planner', tag: 'Next.js · Go · Maps API', accent: '#61DAFB' },
-  { name: 'Translation Management System', tag: 'Go · React · Tailwind', accent: '#38BDF8' },
-  { name: 'Photo Booth', tag: 'React · TypeScript', accent: '#BB4CDB' },
-  { name: 'Museum Website', tag: 'Next.js · Framer Motion', accent: '#F24E1E' },
-  { name: 'Wish Machine', tag: 'React · Node.js', accent: '#47A248' },
-  { name: 'DadaOS', tag: 'TypeScript · Systems UI', accent: '#DC382D' },
-  { name: 'Portfolio Website', tag: 'React · Tailwind · Framer', accent: '#EDEDED' },
-  { name: 'Go Backend API', tag: 'Go · Gin · GORM', accent: '#00ADD8' },
-  { name: 'Interactive Landing Page', tag: 'React · Framer Motion', accent: '#FCC624' },
+  { name: 'E-Service Platform — Tourism & Guide Registry', tag: 'Go · Gin · GORM · PostgreSQL', accent: '#00ADD8' },
+  { name: 'Controlled Energy Production System', tag: 'Go · PostgreSQL · REST API', accent: '#F59E0B' },
+  { name: 'K2 Business Workflow Platform', tag: 'K2 · SQL', accent: '#7C3AED' },
+  { name: 'Tourism Sector Platforms', tag: 'Go · Microservices', accent: '#00ADD8' },
+  { name: 'Energy Sector Platforms', tag: 'Go · PostgreSQL', accent: '#F59E0B' },
+  { name: 'Forestry Sector Platforms', tag: 'Go · REST API', accent: '#22C55E' },
+  { name: 'Microservices Architecture', tag: 'Go · Clean Architecture', accent: '#38BDF8' },
+  { name: 'High-Performance REST APIs', tag: '20,000+ Daily Requests', accent: '#BB4CDB' },
 ]
 
-export const ROW_1_PROJECTS = MARQUEE_PROJECTS.slice(0, 5)
-export const ROW_2_PROJECTS = MARQUEE_PROJECTS.slice(5)
+export const ROW_1_PROJECTS = MARQUEE_PROJECTS.slice(0, 4)
+export const ROW_2_PROJECTS = MARQUEE_PROJECTS.slice(4)
