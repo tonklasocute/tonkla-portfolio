@@ -1,12 +1,7 @@
 import { motion } from 'framer-motion'
 import FadeIn from './FadeIn'
-import TechPill from './TechPill'
+import TechMarqueeItem from './TechMarqueeItem'
 import { TECH_CATEGORIES } from '../data/techStackCategories'
-
-const badgeContainerVariants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.05, delayChildren: 0.1 } },
-}
 
 const PARTICLES = [
   { top: '15%', left: '18%', duration: 6 },
@@ -17,39 +12,36 @@ const PARTICLES = [
   { top: '72%', left: '35%', duration: 6.2 },
 ]
 
-function CategoryCard({
+function MarqueeRow({
   title,
   items,
-  delay,
+  index,
 }: {
   title: string
   items: string[]
-  delay: number
+  index: number
 }) {
+  const doubled = [...items, ...items]
+  const duration = 8 + items.length * 3
+
   return (
-    <FadeIn delay={delay} y={30} duration={0.7} className="h-full">
-      <div
-        className="relative rounded-[28px] sm:rounded-[32px] border border-white/10 backdrop-blur-md p-6 sm:p-7 md:p-8 h-full"
-        style={{
-          background:
-            'linear-gradient(160deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.012) 100%)',
-          boxShadow: '0 20px 50px -30px rgba(0,0,0,0.6)',
-        }}
-      >
-        <span className="block text-[#D7E2EA]/50 font-semibold uppercase tracking-[0.2em] text-[11px] sm:text-xs mb-5 sm:mb-6">
+    <FadeIn delay={index * 0.1} y={24}>
+      <div className="flex flex-col gap-3">
+        <span className="px-1 text-[#D7E2EA]/40 font-semibold uppercase tracking-[0.25em] text-[11px] sm:text-xs">
           {title}
         </span>
-        <motion.div
-          className="flex flex-wrap gap-2 sm:gap-2.5"
-          variants={badgeContainerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '50px', amount: 0 }}
-        >
-          {items.map((name) => (
-            <TechPill key={name} name={name} />
-          ))}
-        </motion.div>
+        <div className="relative overflow-hidden">
+          <div
+            className={`flex w-max gap-3 marquee-track ${index % 2 === 1 ? 'marquee-reverse' : ''}`}
+            style={{ animationDuration: `${duration}s` }}
+          >
+            {doubled.map((name, i) => (
+              <TechMarqueeItem key={`${name}-${i}`} name={name} />
+            ))}
+          </div>
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-12 sm:w-24 bg-gradient-to-r from-[#0C0C0C] to-transparent" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-12 sm:w-24 bg-gradient-to-l from-[#0C0C0C] to-transparent" />
+        </div>
       </div>
     </FadeIn>
   )
@@ -118,13 +110,13 @@ export default function TechStackSection() {
           </p>
         </FadeIn>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+        <div className="flex flex-col gap-8 sm:gap-10">
           {TECH_CATEGORIES.map((category, i) => (
-            <CategoryCard
+            <MarqueeRow
               key={category.title}
               title={category.title}
               items={category.items}
-              delay={i * 0.1}
+              index={i}
             />
           ))}
         </div>

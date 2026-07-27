@@ -1,36 +1,25 @@
 import { motion } from 'framer-motion'
 import { TECH_ICONS } from '../data/techIcons'
 
-interface TechPillProps {
+interface TechMarqueeItemProps {
   name: string
 }
 
-const pillVariants = {
-  hidden: { opacity: 0, y: 14 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] as const },
-  },
-}
-
-export default function TechPill({ name }: TechPillProps) {
+export default function TechMarqueeItem({ name }: TechMarqueeItemProps) {
   const meta = TECH_ICONS[name]
   const Icon = meta?.icon
   const color = meta?.color ?? '#D7E2EA'
 
   return (
     <motion.div
-      variants={pillVariants}
-      className="flex items-center gap-2 rounded-full border border-white/10 px-4 sm:px-5 py-2 sm:py-2.5 backdrop-blur-md cursor-default"
+      className="flex flex-shrink-0 items-center gap-2 rounded-full border border-white/10 px-4 sm:px-5 py-2 sm:py-2.5 backdrop-blur-md cursor-default"
       style={{
         background:
           'linear-gradient(160deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%)',
         boxShadow: '0 4px 16px -8px rgba(0,0,0,0.4)',
       }}
       whileHover={{
-        y: -3,
-        scale: 1.05,
+        scale: 1.08,
         borderColor: `${color}99`,
         boxShadow: `0 10px 28px -10px ${color}66, 0 0 0 1px ${color}55`,
         background:
@@ -39,7 +28,7 @@ export default function TechPill({ name }: TechPillProps) {
       }}
     >
       {Icon && <Icon size={14} color={color} strokeWidth={2} />}
-      <span className="text-[#D7E2EA] font-medium uppercase tracking-wide text-[11px] sm:text-xs">
+      <span className="whitespace-nowrap text-[#D7E2EA] font-medium uppercase tracking-wide text-[11px] sm:text-xs">
         {name}
       </span>
     </motion.div>
