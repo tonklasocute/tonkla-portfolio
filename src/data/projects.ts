@@ -15,9 +15,9 @@ export const PROJECTS = [
   },
   {
     number: '03',
-    category: 'Enterprise Workflow',
-    name: 'K2 Business Workflow Platform',
-    tech: ['K2', 'SQL', 'Workflow Automation'],
-    accent: '#7C3AED',
+    category: 'Government Platform',
+    name: 'Forestry Digital Platform',
+    tech: ['Go', 'PostgreSQL', 'REST API'],
+    accent: '#22C55E',
   },
 ]
