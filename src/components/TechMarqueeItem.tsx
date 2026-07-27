@@ -12,18 +12,19 @@ export default function TechMarqueeItem({ name }: TechMarqueeItemProps) {
 
   return (
     <motion.div
-      className="flex flex-shrink-0 items-center gap-2 rounded-full border border-white/10 px-4 sm:px-5 py-2 sm:py-2.5 backdrop-blur-md cursor-default"
+      className="flex flex-shrink-0 items-center gap-2 rounded-full border border-white/10 px-4 sm:px-5 py-2 sm:py-2.5 cursor-default"
       style={{
-        background:
-          'linear-gradient(160deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%)',
-        boxShadow: '0 4px 16px -8px rgba(0,0,0,0.4)',
+        background: 'rgba(255,255,255,0.02)',
+        filter: 'grayscale(1)',
+        opacity: 0.6,
       }}
       whileHover={{
         scale: 1.08,
+        filter: 'grayscale(0)',
+        opacity: 1,
         borderColor: `${color}99`,
         boxShadow: `0 10px 28px -10px ${color}66, 0 0 0 1px ${color}55`,
-        background:
-          'linear-gradient(160deg, rgba(255,255,255,0.14) 0%, rgba(255,255,255,0.04) 100%)',
+        background: 'rgba(255,255,255,0.06)',
         transition: { type: 'spring', stiffness: 320, damping: 18 },
       }}
     >

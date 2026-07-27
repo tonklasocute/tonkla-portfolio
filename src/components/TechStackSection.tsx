@@ -1,3 +1,4 @@
+import { useRef, useState, type MouseEvent } from 'react'
 import { motion } from 'framer-motion'
 import FadeIn from './FadeIn'
 import TechMarqueeItem from './TechMarqueeItem'
@@ -16,21 +17,52 @@ function MarqueeRow({
   title,
   items,
   index,
+  isLast,
 }: {
   title: string
   items: string[]
   index: number
+  isLast: boolean
 }) {
+  const rowRef = useRef<HTMLDivElement>(null)
+  const [spotlight, setSpotlight] = useState<{ x: number; y: number } | null>(null)
   const doubled = [...items, ...items]
   const duration = 8 + items.length * 3
 
+  const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
+    const rect = rowRef.current?.getBoundingClientRect()
+    if (!rect) return
+    setSpotlight({ x: e.clientX - rect.left, y: e.clientY - rect.top })
+  }
+
   return (
-    <FadeIn delay={index * 0.1} y={24}>
-      <div className="flex flex-col gap-3">
-        <span className="px-1 text-[#D7E2EA]/40 font-semibold uppercase tracking-[0.25em] text-[11px] sm:text-xs">
+    <FadeIn delay={index * 0.08} y={20}>
+      <div
+        ref={rowRef}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={() => setSpotlight(null)}
+        className={`relative flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-8 px-5 sm:px-8 py-6 sm:py-7 ${
+          !isLast ? 'border-b border-white/[0.06]' : ''
+        }`}
+      >
+        <div
+          className="pointer-events-none absolute inset-0 transition-opacity duration-300"
+          style={{
+            opacity: spotlight ? 1 : 0,
+            background: spotlight
+              ? `radial-gradient(380px circle at ${spotlight.x}px ${spotlight.y}px, rgba(255,255,255,0.05), transparent 70%)`
+              : undefined,
+          }}
+        />
+
+        <span className="relative flex shrink-0 items-baseline gap-2 sm:w-36 text-[#D7E2EA]/45 font-semibold uppercase tracking-[0.2em] text-[11px] sm:text-xs">
           {title}
+          <span className="font-mono normal-case tracking-normal text-[#D7E2EA]/25">
+            {String(items.length).padStart(2, '0')}
+          </span>
         </span>
-        <div className="relative overflow-hidden">
+
+        <div className="relative flex-1 overflow-hidden">
           <div
             className={`flex w-max gap-3 marquee-track ${index % 2 === 1 ? 'marquee-reverse' : ''}`}
             style={{ animationDuration: `${duration}s` }}
@@ -39,8 +71,8 @@ function MarqueeRow({
               <TechMarqueeItem key={`${name}-${i}`} name={name} />
             ))}
           </div>
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-12 sm:w-24 bg-gradient-to-r from-[#0C0C0C] to-transparent" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-12 sm:w-24 bg-gradient-to-l from-[#0C0C0C] to-transparent" />
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-10 sm:w-16 bg-gradient-to-r from-[#0C0C0C] to-transparent" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-10 sm:w-16 bg-gradient-to-l from-[#0C0C0C] to-transparent" />
         </div>
       </div>
     </FadeIn>
@@ -110,13 +142,17 @@ export default function TechStackSection() {
           </p>
         </FadeIn>
 
-        <div className="flex flex-col gap-8 sm:gap-10">
+        <div
+          className="relative mx-auto max-w-5xl rounded-[28px] sm:rounded-[32px] border border-white/10 bg-[#0C0C0C] overflow-hidden"
+          style={{ boxShadow: '0 40px 80px -40px rgba(0,0,0,0.8)' }}
+        >
           {TECH_CATEGORIES.map((category, i) => (
             <MarqueeRow
               key={category.title}
               title={category.title}
               items={category.items}
               index={i}
+              isLast={i === TECH_CATEGORIES.length - 1}
             />
           ))}
         </div>
