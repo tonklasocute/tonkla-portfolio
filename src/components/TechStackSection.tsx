@@ -6,7 +6,7 @@ export default function TechStackSection() {
   return (
     <section
       id="skills"
-      className="relative bg-white overflow-hidden px-5 sm:px-8 md:px-10 py-20 sm:py-28 md:py-36"
+      className="relative min-h-screen flex flex-col justify-center bg-white px-5 sm:px-8 md:px-10 py-20 sm:py-28 md:py-36"
     >
       <div className="relative max-w-[1280px] mx-auto w-full">
         <FadeIn duration={0.8}>
