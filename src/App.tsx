@@ -1,5 +1,4 @@
 import HeroSection from './components/HeroSection'
-import MarqueeSection from './components/MarqueeSection'
 import AboutSection from './components/AboutSection'
 import TechStackSection from './components/TechStackSection'
 import ServicesSection from './components/ServicesSection'
@@ -12,7 +11,6 @@ function App() {
     <main className="relative bg-[#0C0C0C]" style={{ overflowX: 'clip' }}>
       <AmbientBackground />
       <HeroSection />
-      <MarqueeSection />
       <AboutSection />
       <TechStackSection />
       <ServicesSection />
