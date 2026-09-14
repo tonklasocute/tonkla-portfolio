@@ -1,23 +1,13 @@
 import { motion } from 'framer-motion'
-import { Terminal } from 'lucide-react'
-import type { ReactNode } from 'react'
 import FadeIn from './FadeIn'
 import AnimatedText from './AnimatedText'
 import TechBadge from './TechBadge'
+import profilePhoto from '../assets/profile.png'
 
 const ABOUT_PARAGRAPHS = [
   "I'm a Full Stack Developer with a deep specialization in Go and microservices — I've built backend platforms serving national-scale government sectors, handling tens of thousands of requests a day.",
   'I move fluidly between backend architecture and frontend craft, pairing PostgreSQL-backed APIs with modern interfaces in React and Next.js.',
   'I care about clean code, thoughtful UX, and shipping systems that are both reliable and easy to use.',
-]
-
-const PROFILE_LINES: { indent: number; content: ReactNode }[] = [
-  { indent: 0, content: <><span style={{ color: '#BB4CDB' }}>const</span> <span style={{ color: '#D7E2EA' }}>about</span> = {'{'}</> },
-  { indent: 1, content: <><span style={{ color: '#7DD3FC' }}>role</span>: <span style={{ color: '#A5D6A7' }}>'Full Stack Developer'</span>,</> },
-  { indent: 1, content: <><span style={{ color: '#7DD3FC' }}>focus</span>: [<span style={{ color: '#A5D6A7' }}>'Go'</span>, <span style={{ color: '#A5D6A7' }}>'Microservices'</span>, <span style={{ color: '#A5D6A7' }}>'React'</span>],</> },
-  { indent: 1, content: <><span style={{ color: '#7DD3FC' }}>approach</span>: <span style={{ color: '#A5D6A7' }}>'ship fast, polish always'</span>,</> },
-  { indent: 1, content: <><span style={{ color: '#7DD3FC' }}>mindset</span>: <span style={{ color: '#A5D6A7' }}>'always learning'</span>,</> },
-  { indent: 0, content: <>{'}'}</> },
 ]
 
 const CORNER_BADGES = [
@@ -59,7 +49,7 @@ export default function AboutSection() {
               className="absolute inset-0 -z-10 rounded-full blur-3xl"
               style={{
                 background:
-                  'radial-gradient(circle, rgba(182,0,168,0.3) 0%, rgba(118,33,176,0.18) 45%, transparent 75%)',
+                  'radial-gradient(circle at 30% 25%, rgba(182,0,168,0.35) 0%, transparent 55%), radial-gradient(circle at 75% 80%, rgba(190,76,0,0.3) 0%, transparent 55%)',
               }}
             />
 
@@ -79,40 +69,21 @@ export default function AboutSection() {
               </motion.div>
             ))}
 
-            <div
-              className="relative rounded-[24px] sm:rounded-[28px] border border-white/10 overflow-hidden backdrop-blur-md"
+            <motion.div
+              className="relative mx-auto aspect-square w-full max-w-[320px] sm:max-w-[360px] rounded-full overflow-hidden border border-white/10"
               style={{
-                background:
-                  'linear-gradient(160deg, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0.015) 100%)',
                 boxShadow:
-                  '0 30px 60px -20px rgba(0,0,0,0.6), inset 0 0 0 1px rgba(255,255,255,0.04)',
+                  '0 30px 60px -20px rgba(0,0,0,0.6), inset 0 0 0 1px rgba(255,255,255,0.06), inset 0 0 50px 14px rgba(12,12,12,0.55)',
               }}
+              animate={{ y: [0, -14, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
             >
-              <div className="flex items-center gap-2 px-4 sm:px-5 py-3 border-b border-white/10">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#FF5F56]" />
-                <span className="w-2.5 h-2.5 rounded-full bg-[#FFBD2E]" />
-                <span className="w-2.5 h-2.5 rounded-full bg-[#27C93F]" />
-                <span className="ml-2 flex items-center gap-1.5 text-[#D7E2EA]/50 text-[10px] sm:text-xs">
-                  <Terminal size={12} />
-                  about.ts
-                </span>
-              </div>
-
-              <div className="px-4 sm:px-6 py-5 sm:py-7 font-mono text-[11px] sm:text-xs md:text-sm leading-relaxed">
-                {PROFILE_LINES.map((line, i) => (
-                  <div key={i} style={{ paddingLeft: `${line.indent * 1.1}em` }}>
-                    {line.content}
-                    {i === PROFILE_LINES.length - 2 && (
-                      <motion.span
-                        className="inline-block w-[6px] h-[1em] bg-[#D7E2EA] ml-1 align-middle"
-                        animate={{ opacity: [1, 1, 0, 0] }}
-                        transition={{ duration: 1, repeat: Infinity, times: [0, 0.5, 0.5, 1] }}
-                      />
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
+              <img
+                src={profilePhoto}
+                alt="Khomkrit Daengnuan"
+                className="w-full h-full object-cover"
+              />
+            </motion.div>
           </div>
         </FadeIn>
       </div>
