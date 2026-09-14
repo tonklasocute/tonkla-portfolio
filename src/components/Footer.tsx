@@ -1,6 +1,5 @@
 import { Mail, Github, Phone } from 'lucide-react'
 import FadeIn from './FadeIn'
-import ContactButton from './ContactButton'
 
 const LINKS = [
   { label: 'Email', href: 'mailto:khomkrit.d@outlook.com', icon: Mail },
@@ -20,12 +19,6 @@ export default function Footer() {
           <br />
           amazing together.
         </h2>
-      </FadeIn>
-
-      <FadeIn delay={0.15}>
-        <div className="flex justify-center mt-8 sm:mt-10">
-          <ContactButton />
-        </div>
       </FadeIn>
 
       <FadeIn delay={0.25}>

@@ -3,7 +3,6 @@ import { Terminal } from 'lucide-react'
 import type { ReactNode } from 'react'
 import FadeIn from './FadeIn'
 import AnimatedText from './AnimatedText'
-import ContactButton from './ContactButton'
 import TechBadge from './TechBadge'
 
 const ABOUT_PARAGRAPHS = [
@@ -52,10 +51,6 @@ export default function AboutSection() {
               />
             ))}
           </div>
-
-          <FadeIn delay={0.2}>
-            <ContactButton />
-          </FadeIn>
         </div>
 
         <FadeIn delay={0.2} x={60} y={0} duration={0.9}>

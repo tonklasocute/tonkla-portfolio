@@ -1,6 +1,5 @@
 import FadeIn from './FadeIn'
 import Magnet from './Magnet'
-import ContactButton from './ContactButton'
 import DevPortrait from './DevPortrait'
 
 const NAV_LINKS = ['Home', 'About', 'Skills', 'Projects', 'Contact']
@@ -61,9 +60,6 @@ export default function HeroSection() {
             microservices, postgresql, react, and next.js — building
             scalable systems for national-scale platforms
           </p>
-        </FadeIn>
-        <FadeIn delay={0.5} y={20}>
-          <ContactButton />
         </FadeIn>
       </div>
     </section>
