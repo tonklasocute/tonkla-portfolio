@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <footer
       id="contact"
-      className="min-h-screen flex flex-col justify-between bg-[#F7F5F1] px-5 sm:px-8 md:px-10 pt-16 sm:pt-20 md:pt-24 pb-6 sm:pb-8"
+      className="min-h-screen flex flex-col justify-between bg-white px-5 sm:px-8 md:px-10 pt-16 sm:pt-20 md:pt-24 pb-6 sm:pb-8"
     >
       <div className="max-w-6xl mx-auto w-full">
         <FadeIn>
