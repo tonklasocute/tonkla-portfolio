@@ -1,11 +1,11 @@
 export const TECH_CATEGORIES = [
   {
     title: 'Frontend',
-    items: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS'],
+    items: ['React', 'Next.js', 'TypeScript', 'Tailwind'],
   },
   {
     title: 'Backend',
-    items: ['Go', 'Gin', 'GORM', 'Microservices'],
+    items: ['Go', 'Node.js', 'Python', 'Java'],
   },
   {
     title: 'Database',
@@ -17,6 +17,6 @@ export const TECH_CATEGORIES = [
   },
   {
     title: 'Design',
-    items: ['Figma', 'Photoshop', 'Illustrator', 'Canva'],
+    items: ['Figma', 'Photoshop', 'Miro', 'Canva'],
   },
 ]

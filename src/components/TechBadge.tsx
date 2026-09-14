@@ -15,22 +15,18 @@ const SIZES = {
 export default function TechBadge({ name, size = 'md', className }: TechBadgeProps) {
   const meta = TECH_ICONS[name]
   const Icon = meta?.icon
-  const color = meta?.color ?? '#D7E2EA'
+  const color = meta?.color ?? '#181512'
   const s = SIZES[size]
 
   return (
     <div className={`flex flex-col items-center gap-2 ${className ?? ''}`}>
       <div
-        className={`${s.box} rounded-2xl flex items-center justify-center border border-white/10 backdrop-blur-sm`}
-        style={{
-          background:
-            'linear-gradient(160deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.01) 100%)',
-          boxShadow: `0 0 24px -8px ${color}66, inset 0 0 0 1px rgba(255,255,255,0.04)`,
-        }}
+        className={`${s.box} rounded-2xl flex items-center justify-center border border-[#181512]/12 bg-[#F5F1EA]`}
+        style={{ boxShadow: `0 8px 20px -10px ${color}55` }}
       >
         {Icon && <Icon size={s.icon} color={color} strokeWidth={1.75} />}
       </div>
-      <span className={`text-[#D7E2EA] font-medium uppercase tracking-wide ${s.text}`}>
+      <span className={`text-[#181512] font-medium uppercase tracking-wide ${s.text}`}>
         {name}
       </span>
     </div>
