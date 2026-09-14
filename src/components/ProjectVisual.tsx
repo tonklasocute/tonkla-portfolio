@@ -59,9 +59,9 @@ export default function ProjectVisual({
                 {slug(name)}.dev
               </span>
             </div>
-            <div className="flex-1 flex items-center justify-center px-4">
+            <div className="flex-1 flex items-center justify-center px-4 min-w-0">
               <span
-                className="font-black uppercase tracking-tight text-center leading-none"
+                className="font-black uppercase tracking-tight text-center leading-none truncate max-w-full"
                 style={{
                   fontSize: 'clamp(1.1rem, 3vw, 2.25rem)',
                   color: accent,
