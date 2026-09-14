@@ -1,4 +1,5 @@
 import { Image, Palette, type LucideIcon } from 'lucide-react'
+import type { IconType } from 'react-icons'
 import {
   SiReact,
   SiNextdotjs,
@@ -18,7 +19,6 @@ import {
   SiLinux,
   SiFigma,
   SiMiro,
-  type IconType,
 } from 'react-icons/si'
 
 export interface TechMeta {
