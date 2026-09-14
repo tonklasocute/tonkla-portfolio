@@ -19,7 +19,7 @@ const ABOUT_PARAGRAPHS = [
 
 export default function AboutSection() {
   return (
-    <section id="about" className="relative bg-[#F5F1EA] px-5 sm:px-8 md:px-10 py-20 sm:py-28 md:py-36">
+    <section id="about" className="relative bg-white px-5 sm:px-8 md:px-10 py-20 sm:py-28 md:py-36">
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-12 items-center">
         <div className="flex flex-col gap-8 sm:gap-10">
           <FadeIn y={40}>
